@@ -1,0 +1,129 @@
+/* ---------- ÁREA COTAÇÃO ---------- */
+.cotacao {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.cotacao div {
+  text-align: center;
+}
+.cotacao span {
+  margin: 20px 0;
+}
+
+/* ---------- ÁREA PATRIMÔNIO ---------- */
+.patrimonio {
+  margin-bottom: 60px;
+  background-color: rgba(0, 0, 0, 0.03);
+  padding: 10px 0px;
+}
+.patrimonio p {
+  line-height: 1.5;
+  font-size: 1.25em;
+  color: rgba(0, 0, 0, 0.8);
+}
+.patrimonio p:first-child {
+  font-size: 1.625em;
+  color: rgba(0, 0, 0, 0.9);
+}
+.patrimonio span {
+  margin: 30px 0;
+  font-weight: 500;
+}
+.patrimonio-total {
+}
+
+/* ---------- ÁREA NEGOCIAÇÃO ---------- */
+.negociacao {
+  margin-bottom: 30px;
+}
+.negociacao-content {
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px 40px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.negociacao-titulos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 20px;
+}
+.titulo-comprar,
+.titulo-vender {
+  margin-top: 0;
+  text-align: center;
+  cursor: pointer;
+}
+.titulo-comprar {
+  color: rgb(100, 200, 100);
+  padding-bottom: 8px;
+  border-bottom: 4px solid rgb(100, 200, 100);
+}
+.titulo-vender {
+  color: rgb(255, 80, 80);
+  padding-bottom: 8px;
+  border-bottom: 4px solid rgb(255, 80, 80);
+  opacity: 0.3;
+}
+
+.negociacao form {
+  max-width: 50%;
+  margin: 0 auto;
+}
+.negociacao input {
+  display: block;
+  font-family: "Fira sans";
+  padding: 16px 24px;
+  font-weight: 700;
+  font-size: 2em;
+  text-align: center;
+  width: 100%;
+  border: none;
+}
+.negociacao-btn {
+  border-radius: 4px;
+  background-color: transparent;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.negociacao input.negociacao-btn {
+  text-transform: uppercase;
+  font-size: 1.25em;
+}
+
+.negociacao-btn:active {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.negociacao-comprar {
+  animation: fadeInRight 0.3s;
+}
+.negociacao-vender {
+  animation: fadeInLeft 0.3s;
+}
+
+/* ---------- ANIMAÇÕES ---------- */
+@keyframes fadeInLeft {
+  from {
+    transform: translate3d(120px, 0, 0);
+    opacity: 0;
+  }
+  to {
+    transform: translate3d(0px, 0, 0);
+
+    opacity: 1;
+  }
+}
+@keyframes fadeInRight {
+  from {
+    transform: translate3d(-120px, 0, 0);
+    opacity: 0;
+  }
+  to {
+    transform: translate3d(0px, 0, 0);
+
+    opacity: 1;
+  }
+}

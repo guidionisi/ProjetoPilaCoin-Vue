@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;700&family=Roboto:wght@400;700&display=swap");
+@import "./css/home.css";
+@import "./css/footer.css";
+@import "./css/header.css";
+@import "./css/login.css";
+
+body {
+  font-family: "Fira Sans", sans-serif;
+  /* font-family: "Roboto", sans-serif; */
+  color: rgba(0, 0, 0, 0.9);
+  margin: 0;
+  padding: 0;
+  background-color: beige;
+  /* max-width: 960px; */
+  background-color: #fefefe;
+}
+
+#app {
+  display: relative;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+* {
+  box-sizing: border-box;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+p {
+  margin: 0;
+}
+h2 {
+  margin: 0 0 20px 0;
+}
+.none {
+  display: none;
+}
+
+.card {
+  display: inline-block;
+  font-size: 5em;
+  font-weight: bold;
+  padding: 20px 40px;
+  border-radius: 8px;
+  /* border: none; */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), 0 0 4px rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="./vue.min.js"></script>
+
+    <title>PilaCoin</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- ------------------------- MODAL LOGIN ------------------------- -->
+      <section class="modal-login" :class="{none: isNone}">
+        <form action="/" method="POST">
+          <h1>Pila Coin</h1>
+          <h2>Simulador Home Broker</h2>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" v-model="email" />
+          <label for="senha">senha</label>
+          <input type="password" id="senha" name="senha" v-model="senha" />
+          <input
+            @click="login"
+            class="login-btn"
+            type="submit"
+            value="ENTRAR"
+          />
+          <!-- <span><a href="/">Criar conta</a></span> -->
+        </form>
+      </section>
+      <!-- ------------------------- ÁREA HEADER ------------------------- -->
+      <header>
+        <p>
+          <span>Olá,</span>
+          {{usuarios[idAtivo].nome}}
+        </p>
+        <button @click="logout" class="header-btn">SAIR</button>
+      </header>
+
+      <!-- ------------------------- ÁREA COTAÇÃO ------------------------- -->
+
+      <section class="cotacao">
+        <h2>O pila está valendo hoje</h2>
+        <div>
+          <span class="card">{{cotacao | formataCotacao}}</span>
+        </div>
+      </section>
+
+      <!-- ------------------------- ÁREA PATRIMÔNIO ------------------------- -->
+      <section class="patrimonio">
+        <h2>MEU PATRIMÔNIO</h2>
+        <div>
+          <p>
+            Total investido:
+            <span>{{usuarios[idAtivo].pila * cotacao | formataReal}}</span>
+          </p>
+          <p>
+            Disponível para investir:
+            <span>{{usuarios[idAtivo].real | formataReal}}</span>
+          </p>
+          <p>
+            Total investido:
+            <span>{{usuarios[idAtivo].pila | formataPila}}</span>
+          </p>
+        </div>
+      </section>
+
+      <!-- ------------------------- ÁREA NEGOCIAÇÃO ------------------------- -->
+      <section class="negociacao">
+        <h2>NEGOCIAÇÃO</h2>
+        <div class="negociacao-content">
+          <ul class="negociacao-titulos">
+            <li @click="inativar">
+              <h3 class="titulo-comprar">Comprar</h3>
+            </li>
+            <li @click="inativar">
+              <h3 class="titulo-vender">Vender</h3>
+            </li>
+          </ul>
+
+          <div v-if="comprarAtivo" class="negociacao-comprar">
+            <form action="" @submit="comprar($event)">
+              <label for="comprarAtivo"></label>
+              <input
+                type="text"
+                id="comprarAtivo"
+                name="comprarAtivo"
+                value="1,00"
+              />
+              <input type="submit" value="Comprar" class="negociacao-btn" />
+            </form>
+          </div>
+
+          <div v-else class="negociacao-vender">
+            <form @submit="vender($event)">
+              <label for="venderAtivo"></label>
+              <input
+                type="text"
+                id="venderAtivo"
+                name="venderAtivo"
+                value="1,00"
+              />
+              <input type="submit" value="Vender" class="negociacao-btn" />
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ------------------------- FOOTER ------------------------- -->
+    <footer>Todos os direitos reservados.</footer>
+    <script src="./app.js"></script>
+  </body>
+</html>

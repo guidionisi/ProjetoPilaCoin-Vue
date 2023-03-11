@@ -1,0 +1,12 @@
+{
+  "name": "js",
+  "version": "1.0.0",
+  "main": "firebase-init.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "backend": "json-server --watch ./db/db.json"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

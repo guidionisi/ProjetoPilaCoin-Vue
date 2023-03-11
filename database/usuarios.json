@@ -1,0 +1,18 @@
+[
+  {
+    "id": 0,
+    "nome": "Guilherme",
+    "sobrenome": "Dionisio",
+    "senha": "1234",
+    "pila": 7,
+    "real": 45.7
+  },
+  {
+    "id": 1,
+    "nome": "Lara",
+    "sobrenome": "Rambo Dionisio",
+    "senha": "1111",
+    "pila": 35,
+    "real": 8
+  }
+]
